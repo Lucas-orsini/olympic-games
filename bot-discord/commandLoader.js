@@ -13,12 +13,12 @@ module.exports = {
         const command = require('./commands/' + file);
 
         // On récupère le nom de la fonction déclaré avec module.exports.name dans le fichier de la commande
-        const commandName = command.name;
+        const nameCommand = command.name;
 
         // On ajoute la commande avec son nom dans une map accessible depuis notre client Discord
-        client.commands.set(commandName, command);
+        client.commands.set(nameCommand, command);
 
-        console.log(`The ${commandName} command has been loaded!`);
+        console.log(`The ${nameCommand} command has been loaded!`);
       })
   }
 };

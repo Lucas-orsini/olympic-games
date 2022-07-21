@@ -6,7 +6,7 @@ const mySqlConnector = require('../src/mySqlConnector');
  * @param {Discord.Message} message
  * @param {Array<String>} arguments
  */
-module.exports.run = async(client, message, arguments) => {
+module.exports.run = async(client, message, args) => {
 
     mySqlConnector.connect();
     console.log('test')

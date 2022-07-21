@@ -2,19 +2,19 @@ require('dotenv').config()
 const Discord = require('discord.js')
 const { GatewayIntentBits } = require('discord.js');
 const MysqlConnector = require('./src/MySqlConnector');
-const TOKEN = 'OTkxNjA2NDg2Mjk4MDE3ODMy.GYd8yH.n3Ol0S11c1jqM7Rn-jL--A3om071h_QN9dcK9Q';
+const TOKEN = 'OTkxNjA2NDg2Mjk4MDE3ODMy.G3EdBa.AYNd0KgJ7-syAoIpBz2sK1IjBa7Su9Mbd7v4ro';
 const commandLoader = require("./commandLoader")
 MysqlConnector.connect();
 
 
 
-const bot = new Discord.Client({
-    intents: [   GatewayIntentBits.Guilds,
+const client = new Discord.Client({
+    intents: [GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.GuildMembers]
 })
-commandLoader.load(bot);
-bot.on('create', async(message) => {
+commandLoader.load(client);
+client.on('create', async(message) => {
      if (message.content.startsWith("!")){
         console.log('yupi')
         let words = message.content.split(' ');
@@ -24,9 +24,9 @@ bot.on('create', async(message) => {
         const args = words;
         console.log(args)
 
-        if (bot.commands.has(nameCommand)) {
+        if (client.commands.has(nameCommand)) {
             
-            bot.commands.get(nameCommand).run(bot, message, args);
+            client.commands.get(nameCommand).run(client, message, args);
         } else {
      
             await message.delete();
@@ -35,7 +35,7 @@ bot.on('create', async(message) => {
 
     }
 })
-            bot.login(TOKEN)
+            client.login(TOKEN)
 
             .then(() => {
                 console.log("connexion reussie");
