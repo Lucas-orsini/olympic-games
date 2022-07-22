@@ -1,26 +1,21 @@
 require('dotenv').config()
 const Discord = require('discord.js')
-const { GatewayIntentBits } = require('discord.js');
 const MysqlConnector = require('./src/MySqlConnector');
-const TOKEN = 'OTkxNjA2NDg2Mjk4MDE3ODMy.G3EdBa.AYNd0KgJ7-syAoIpBz2sK1IjBa7Su9Mbd7v4ro';
+const TOKEN = 'OTkxNjA2NDg2Mjk4MDE3ODMy.GKtqLQ.pybfmWrZr5hbwvSENw-u-Dw49XbD2N2p9CIV04';
 const commandLoader = require("./commandLoader")
 MysqlConnector.connect();
 
 
 
 const client = new Discord.Client({
-    intents: [GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.GuildMembers]
+    intents: ["GUILD_MESSAGES", "GUILDS"]
 })
 commandLoader.load(client);
-client.on('create', async(message) => {
+client.on('messageCreate', async(message) => {
+
      if (message.content.startsWith("!")){
-        console.log('yupi')
         let words = message.content.split(' ');
-        console.log(words)
         const nameCommand = words.shift().slice(1);
-        console.log(nameCommand)
         const args = words;
         console.log(args)
 
