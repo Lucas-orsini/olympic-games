@@ -8,6 +8,7 @@ const mySqlConnector = require('../src/MySqlConnector');
  */
 module.exports.run = async(client, message, args) => {
 
+
     let content = message.content;
     let newContent = content.split(" ")
     newContent.shift()
@@ -16,7 +17,9 @@ module.exports.run = async(client, message, args) => {
 
     let classement = await mySqlConnector.executeQuery("SELECT * FROM resultat WHERE sport = " + "'" + sport + "'");
     console.log(classement)
-    await message.channel.send(`Podium Premier : ${classement[0].premier} / Deuxieme : ${classement[0].deuxieme} / Troisieme :${classement[0].deuxieme} `);
+    let athletes = await mySqlConnector.executeQuery("SELECT * FROM athletes WHERE id = " + "'" + classement[0].premier + "' OR id = " + "'" + classement[0].deuxieme + "' OR id = " + "'" + classement[0].troisieme + "'")
+    console.log(athletes)
+    await message.channel.send(`Podium Premier : ${athletes[0].nom} ${athletes[0].pays}/ Deuxieme : ${athletes[1].nom} ${athletes[1].pays}/ Troisieme : ${athletes[2].nom} ${athletes[2].pays}`);
    
 };
 
