@@ -1,28 +1,22 @@
-# symfony-Lucas-orsini
-symfony-Lucas-orsini created by GitHub Classroom
+# BOT-Discord-Lucas-orsini
 
 ## Install project 
 
  ``` 
- composer install
+npm install
  ```
  ## Create database
 
  ``` 
- php bin/console doctrine:database:create
+ créer une base de donnée avec deux tables nommées : resultat et athletes
  ```
 
-## Create migration 
- ``` 
-php bin/console doctrine:migrations:diff
 
-php bin/console doctrine:migrations:migrate
+## .env
  ``` 
-## Load fixtures 
+Mettre ses propres variables
  ``` 
-php bin/console doctrine:fixtures:load
+## Lien vidéo explication du projet
  ``` 
-## Project start 
- ``` 
-symfony server:start
+lien a mettre
  ``` 
