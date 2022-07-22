@@ -12,9 +12,9 @@ npm install
  ```
 
 
-## .env
+## .env + token
  ``` 
-Mettre ses propres variables
+Mettre ses propres variables et changer le token dans bot.js
  ``` 
 ## Lien vidéo explication du projet
  ``` 
