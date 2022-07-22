@@ -18,5 +18,5 @@ Mettre ses propres variables et changer le token dans bot.js
  ``` 
 ## Lien vidéo explication du projet
  ``` 
-lien a mettre
+[Vidéo explication](https://youtu.be/TmthV8cit8A)
  ``` 
