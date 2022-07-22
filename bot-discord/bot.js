@@ -1,7 +1,7 @@
 require('dotenv').config()
 const Discord = require('discord.js')
 const MysqlConnector = require('./src/MySqlConnector');
-const TOKEN = 'OTkxNjA2NDg2Mjk4MDE3ODMy.GWOx7L.YW1Nm4UhJyXqkb7RcxbjiaY1heBgmVJQ8Sx4ZU';
+const TOKEN = 'OTkxNjA2NDg2Mjk4MDE3ODMy.Gsm9eu.Og0rNLq4Orc-ZuN-RzmmfM6t2FCLJsW1z_OvBw';
 const commandLoader = require("./commandLoader")
 MysqlConnector.connect();
 
