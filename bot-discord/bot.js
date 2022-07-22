@@ -1,7 +1,7 @@
 require('dotenv').config()
 const Discord = require('discord.js')
 const MysqlConnector = require('./src/MySqlConnector');
-const TOKEN = 'OTkxNjA2NDg2Mjk4MDE3ODMy.G2ZIJA.y2LQmErXq1H3zD7bwR-yzTpI0jKessHDxyw0Pc';
+const TOKEN = 'OTkxNjA2NDg2Mjk4MDE3ODMy.GWOx7L.YW1Nm4UhJyXqkb7RcxbjiaY1heBgmVJQ8Sx4ZU';
 const commandLoader = require("./commandLoader")
 MysqlConnector.connect();
 
@@ -17,7 +17,7 @@ client.on('messageCreate', async(message) => {
         let words = message.content.split(' ');
         const nameCommand = words.shift().slice(1);
         const args = words;
-        console.log(args)
+
 
         if (client.commands.has(nameCommand)) {
             
